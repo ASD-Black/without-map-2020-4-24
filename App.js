@@ -16,6 +16,7 @@ import { Setting} from './pages/drawer/Setting'
 import  {Payments}  from './pages/drawer/Payments'
 import { Inquiry} from './pages/drawer/Inquiry'
 import InquiryHistory from './pages/drawer/inquiry/inquiryHistory'
+import { StarRating} from './pages/drawer/StarRating'
 
 import Feed from './pages/tabs/Feed/Feed'
 import { FeedDetails } from './pages/tabs/Feed/FeedDetails'
@@ -111,6 +112,10 @@ const MainStack = createStackNavigator({
   },
   InquiryHistory: {
     screen: InquiryHistory,
+    navigationOptions: navOptionHandlerOFF
+  },
+  StarRating: {
+    screen: StarRating,
     navigationOptions: navOptionHandlerOFF
   },
 }, {initialRouteName: 'Home'})

@@ -30,7 +30,7 @@ export class Login extends React.Component{
 
   render(){
     return (
-      <KeyboardAvoidingView style={{ flex:1}} behavior="padding">
+      <KeyboardAvoidingView style={{ flex:1}}>
       <View style={styles.container}>
         <Logo/>
         <TextInput style={styles.inpuBox} 
@@ -58,7 +58,7 @@ export class Login extends React.Component{
 
   login = () =>{
     //alert(this.state.email)
-    fetch('http://100.98.18.51:3000/api/login', {
+    fetch('http://192.168.8.100:3000/api/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

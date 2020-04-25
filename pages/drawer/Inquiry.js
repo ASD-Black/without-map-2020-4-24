@@ -136,7 +136,7 @@ export class Inquiry extends React.Component {
       const fullDate = year + '-' + month + '-' + date + ' ' + hours + ':' + min + ':' + sec
     
 
-      fetch('http://100.98.18.51:3000/api/makeInquiry',{
+      fetch('http://192.168.8.100:3000/api/makeInquiry',{
           method: 'POST',
           headers: {
               'Accept': 'application/json',

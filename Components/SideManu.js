@@ -17,7 +17,7 @@ export class SideManu extends React.Component {
     var value = await AsyncStorage.getItem('passengers')
     //console.log(value)
 
-      fetch('http://100.98.18.51:3000/api/getLoadedUserFromSLIITdb/' + value)
+      fetch('http://192.168.8.100:3000/api/getLoadedUserFromSLIITdb/' + value)
       .then((response) => response.json())
       .then((res) => {
 
@@ -63,6 +63,9 @@ export class SideManu extends React.Component {
               </ListItem>
               <ListItem onPress={()=> this.props.navigation.navigate('Inquiry')}>
                 <Text>Inquiry</Text>
+              </ListItem>
+              <ListItem onPress={()=> this.props.navigation.navigate('StarRating')}>
+                <Text>Rate Us</Text>
               </ListItem>
             </List>
           </ScrollView>

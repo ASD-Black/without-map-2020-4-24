@@ -49,7 +49,7 @@ export function getCurrentLocation(){
 export function getDriverInfo(){
 	return (dispatch, store)=>{
 		let id = store().home.booking.driverId;
-		request.get("http://http://100.98.18.51:3000/api/driver/" + id)
+		request.get("http://http://192.168.8.100:3000/api/driver/" + id)
 		.finish((erroe, res)=>{
 			dispatch({
 				type:GET_DRIVER_INFORMATION,
@@ -64,7 +64,7 @@ export function getDriverInfo(){
 export function getDriverLocation(){
 	return (dispatch, store)=>{
 		let id = store().home.booking.driverId;
-		request.get("http://http://100.98.18.51:3000/api/driverLocation/" + id)
+		request.get("http://http://192.168.8.100:3000/api/driverLocation/" + id)
 		.finish((erroe, res)=>{
 			dispatch({
 				type:GET_DRIVER_LOCATION,

@@ -18,7 +18,7 @@ export class Register extends React.Component {
   }
     render() {
       return (
-      <KeyboardAvoidingView style={{ flex:1}} behavior="padding">
+      <KeyboardAvoidingView style={{ flex:1}}>
         <View style={styles.container}>
           <Logo/>
           <View>
@@ -64,7 +64,7 @@ export class Register extends React.Component {
   
       if(checkOwnerName(regno) && validateNic(nic) && chackOwnerEmail(email) && validatePassword(Password)){
         
-        fetch('http://100.98.18.51:3000/api/signUp',{
+        fetch('http://192.168.8.100:3000/api/signUp',{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
