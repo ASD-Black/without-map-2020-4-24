@@ -18,19 +18,7 @@ export class Inquiry extends React.Component {
     }
   }
 
-  ShowCurrentDate=()=>{
 
-    var date = new Date().getDate();
-    var month = new Date().getMonth() + 1;
-    var year = new Date().getFullYear();
-    var hours = new Date().getHours(); //Current Hours
-    var min = new Date().getMinutes(); //Current Minutes
-    var sec = new Date().getSeconds(); //Current Seconds
-
-    const fullDate = year + '-' + month + '-' + date + ' ' + hours + ':' + min + ':' + sec
-    //Alert.alert(fullDate);
-
-   }
 
   // constructor(props) {
   //   super(props);
@@ -125,7 +113,7 @@ export class Inquiry extends React.Component {
 
     makeInquiry = async () =>{
       const value = await AsyncStorage.getItem('passengers')
-
+      //Alert.alert(value);
       var date = new Date().getDate();
       var month = new Date().getMonth() + 1;
       var year = new Date().getFullYear();
@@ -135,8 +123,9 @@ export class Inquiry extends React.Component {
 
       const fullDate = year + '-' + month + '-' + date + ' ' + hours + ':' + min + ':' + sec
     
+      
 
-      fetch('http://192.168.8.100:3000/api/makeInquiry',{
+      fetch('http://192.168.8.101:3000/api/makeInquiry',{
           method: 'POST',
           headers: {
               'Accept': 'application/json',

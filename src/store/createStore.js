@@ -7,7 +7,7 @@ import createSocketIoMiddleware from "redux-socket.io";
 
 import io from "socket.io-client/dist/socket.io";
 
-let socket = io("http://http://192.168.8.100:3000", {jsonp:false});
+let socket = io("http://http://192.168.8.101:3000", {jsonp:false});
 let socketIoMiddleware = createSocketIoMiddleware(socket, "server/");
 
 const log =  createLogger({ diff: true, collapsed: true });

@@ -50,7 +50,7 @@ _loadInitialState = async() => {
   }
   login = () =>{
     //alert(this.state.email)
-    fetch('http://192.168.8.100:3000/api/login', {
+    fetch('http://192.168.8.101:3000/api/login', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

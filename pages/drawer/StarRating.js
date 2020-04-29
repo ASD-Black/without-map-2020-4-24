@@ -9,14 +9,33 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
+//import AsyncStorage from '@react-native-community/async-storage';
 //import all the components we are going to use.
 import CustomHeader from '../../Components/CustomHeader'
 
+// getData = async () => {
+//   try {
+//     const value = await AsyncStorage.getItem('passengers')
+//     if(value !== null) {
+//       // value previously stored
+//     }
+//   } catch(e) {
+//     // error reading value
+//   }
+// }
+
 export class StarRating extends React.Component{
-  constructor() {
-    super();
+
+  
+
+  constructor(props) {
+    super(props);
     this.state = {
+      regno:'',
+      rate:'',
+      date:'',
       Default_Rating: 2,
       //To set the default Star Selected
       Max_Rating: 5,
@@ -55,9 +74,11 @@ export class StarRating extends React.Component{
     return (
         <Container>
             <CustomHeader title="Rate us" navigation={this.props.navigation}/>
-       
+          
             <View style={styles.MainContainer}>
-               
+            <Image style={{width:120, height:150, marginBottom:50}}
+             source={require('../../assets/SLIIT_Logo.png')}
+            />
         <Text style={styles.textStyle}>How was your experience with us</Text>
         <Text style={styles.textStyleSmall}>Please Rate Us</Text>
         {/*View to hold our Stars*/}
@@ -80,8 +101,45 @@ export class StarRating extends React.Component{
       </Container>
     );
   }
-  saveRating = () =>{
-    alert("You give us  " + this.state.Default_Rating + "  Stars.  Thank You...!")
+  saveRating = async () =>{
+
+    const value = await AsyncStorage.getItem('passengers')
+      //Alert.alert(value);
+      var date = new Date().getDate();
+      var month = new Date().getMonth() + 1;
+      var year = new Date().getFullYear();
+      var hours = new Date().getHours(); //Current Hours
+      var min = new Date().getMinutes(); //Current Minutes
+      var sec = new Date().getSeconds(); //Current Seconds
+
+      const fullDate = year + '-' + month + '-' + date + ' ' + hours + ':' + min + ':' + sec
+  
+    
+    fetch('http://192.168.8.101:3000/api/makeStarRating',{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify({
+        rate: this.state.Default_Rating,
+        regno:value,
+        date:fullDate
+        })
+    })
+        .then((response) => response.json())
+        .then((res) => {
+          
+          if(res.success === true){
+            
+            alert("You give us with " + this.state.Default_Rating + "  Stars.  Thank You...!")
+            this.props.navigation.goBack()
+          }
+          else if(res.success === false){
+              alert(res.errmessage);
+          }
+        })
+        .done(); 
   }
 }
 

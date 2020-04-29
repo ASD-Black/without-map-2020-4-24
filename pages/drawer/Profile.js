@@ -26,7 +26,7 @@ export class Profile extends React.Component {
     var value = await AsyncStorage.getItem('passengers')
     //console.log(value)
 
-    fetch('http://192.168.8.100:3000/api/getLoadedUser/' + value)
+    fetch('http://192.168.8.101:3000/api/getLoadedUser/' + value)
       .then((response) => response.json())
       .then((res) => {
 
@@ -39,7 +39,7 @@ export class Profile extends React.Component {
         }
       }).done()
 
-      fetch('http://192.168.8.100:3000/api/getLoadedUserFromSLIITdb/' + value)
+      fetch('http://192.168.8.101:3000/api/getLoadedUserFromSLIITdb/' + value)
       .then((response) => response.json())
       .then((res) => {
 
@@ -52,7 +52,7 @@ export class Profile extends React.Component {
         }
       }).done()
 
-      fetch('http://192.168.8.100:3000/api/getLoadedUserFromSLIITdb/' + value)
+      fetch('http://192.168.8.101:3000/api/getLoadedUserFromSLIITdb/' + value)
       .then((response) => response.json())
       .then((res) => {
 
@@ -65,7 +65,7 @@ export class Profile extends React.Component {
         }
       }).done()
 
-      fetch('http://192.168.8.100:3000/api/getAccountBal/' + value)
+      fetch('http://192.168.8.101:3000/api/getAccountBal/' + value)
       .then((response) => response.json())
       .then((res) => {
 

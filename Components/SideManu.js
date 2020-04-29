@@ -17,7 +17,7 @@ export class SideManu extends React.Component {
     var value = await AsyncStorage.getItem('passengers')
     //console.log(value)
 
-      fetch('http://192.168.8.100:3000/api/getLoadedUserFromSLIITdb/' + value)
+      fetch('http://192.168.8.101:3000/api/getLoadedUserFromSLIITdb/' + value)
       .then((response) => response.json())
       .then((res) => {
 

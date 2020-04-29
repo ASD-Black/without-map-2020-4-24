@@ -178,7 +178,7 @@ export function bookCar(){
 			}
 		};
 
-		request.post("http://http://192.168.8.100:3000/api/bookings")
+		request.post("http://http://192.168.8.101:3000/api/bookings")
 		.send(payload)
 		.finish((error, res)=>{
 			dispatch({
@@ -194,7 +194,7 @@ export function bookCar(){
 
 export function getNearByDrivers(){
 	return(dispatch, store)=>{
-		request.get("http://http://192.168.8.100:3000/api/driverLocation")
+		request.get("http://http://192.168.8.101:3000/api/driverLocation")
 		.query({
 			latitude:3.145909,
 			longitude:101.696985	

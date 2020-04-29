@@ -53,7 +53,7 @@ renderItem = ({ item }) => {
     var value = await AsyncStorage.getItem('passengers')
     //console.log(value)
 
-    fetch('http://192.168.8.100:3000/api/getPaymentsDetails/' + value)
+    fetch('http://192.168.8.101:3000/api/getPaymentsDetails/' + value)
   .then((response) => response.json())
   .then((res) => {
 

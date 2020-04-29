@@ -64,7 +64,7 @@ export class Register extends React.Component {
   
       if(checkOwnerName(regno) && validateNic(nic) && chackOwnerEmail(email) && validatePassword(Password)){
         
-        fetch('http://192.168.8.100:3000/api/signUp',{
+        fetch('http://192.168.8.101:3000/api/signUp',{
           method: 'POST',
           headers: {
               'Accept': 'application/json',
