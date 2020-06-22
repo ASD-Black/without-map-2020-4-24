@@ -8,7 +8,7 @@ export class Setting extends React.Component {
     render() {
       return (
         <View style={{flex: 1}}>
-        <CustomHeader title="Settings" navigation={this.props.navigation}/>
+        <CustomHeader title="Notifications" navigation={this.props.navigation}/>
         <StatusBar 
         barStyle = "light-content" 
         hidden = {false}

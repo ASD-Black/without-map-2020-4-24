@@ -37,8 +37,8 @@ renderItem = ({ item }) => {
           <View style={{flex:1, justifyContent:'center'}}>
 
           <Text style={{fontSize:20, color:'green'}}>Date:-   {item.date}</Text>
-            <Text style={{fontSize:22, color:'red'}}>Amount:-   {item.amount}</Text>
-            <Text style={{fontSize:20, color:'green'}}>Method:-   {item.method}</Text>
+            <Text style={{fontSize:22, color:'red'}}>Amount:-   {item.amount} /-</Text>
+            <Text style={{fontSize:20, color:'green'}}>Method:-   {item.pay_type}</Text>
             
             
           </View>
@@ -62,7 +62,7 @@ renderItem = ({ item }) => {
       //console.log(Category)
     }
     else {
-      alert("No any inqiry yet...!");
+      alert("No any payments yet...!");
     }
   }).done()
 }

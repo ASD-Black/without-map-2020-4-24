@@ -36,7 +36,7 @@ export class StarRating extends React.Component{
       regno:'',
       rate:'',
       date:'',
-      Default_Rating: 2,
+      Default_Rating: 1,
       //To set the default Star Selected
       Max_Rating: 5,
       //To set the max number of Stars
