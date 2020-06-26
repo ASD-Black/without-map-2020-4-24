@@ -17,6 +17,7 @@ import  {Payments}  from './pages/drawer/Payments'
 import { Inquiry} from './pages/drawer/Inquiry'
 import InquiryHistory from './pages/drawer/inquiry/inquiryHistory'
 import { StarRating} from './pages/drawer/StarRating'
+import  {EditDetails}  from './pages/drawer/editDetails'
 
 import Feed from './pages/tabs/Feed/Feed'
 import { FeedDetails } from './pages/tabs/Feed/FeedDetails'
@@ -91,7 +92,7 @@ const MainTabs = createBottomTabNavigator({
 
 const MainStack = createStackNavigator({
   Home: {
-    screen: MainTabs,
+    screen: Feed,
     navigationOptions: navOptionHandlerOFF
   },
   Setting: {
@@ -116,6 +117,10 @@ const MainStack = createStackNavigator({
   },
   StarRating: {
     screen: StarRating,
+    navigationOptions: navOptionHandlerOFF
+  },
+  EditDetails: {
+    screen: EditDetails,
     navigationOptions: navOptionHandlerOFF
   },
 }, {initialRouteName: 'Home'})

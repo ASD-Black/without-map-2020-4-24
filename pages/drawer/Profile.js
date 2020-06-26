@@ -125,13 +125,11 @@ export class Profile extends React.Component {
 
           
           
-          <TouchableOpacity style={{backgroundColor: '#1c313a',width: 120, height:50, marginTop:-150, paddingVertical: 12, borderRadius: 5, marginLeft:220}} onPress={this.login}>
+          <TouchableOpacity style={{backgroundColor: '#1c313a',width: 120, height:50, marginTop:-1, paddingVertical: 12, borderRadius: 5, marginLeft:210}} onPress={()=> this.props.navigation.navigate('EditDetails')}>
             <Text style={styles.buttonText}>Edit Details</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button} onPress={this.login}>
-            <Text style={styles.buttonText}>Show Traval History</Text>
-        </TouchableOpacity>
+          
         </View>
       </View>
       );

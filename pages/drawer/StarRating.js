@@ -38,7 +38,7 @@ export class StarRating extends React.Component{
       date:'',
       Default_Rating: 1,
       //To set the default Star Selected
-      Max_Rating: 5,
+      Max_Rating: 6,
       //To set the max number of Stars
     };
     //Filled Star. You can also give the path from local

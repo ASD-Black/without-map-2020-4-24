@@ -1,9 +1,11 @@
 import React from 'react';
 //import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, StatusBar, ImageBackground } from 'react-native';
 import { Container, Header, Content, Body, Right, Button, Icon, Title, Form, Item, Picker } from 'native-base';
 
 import  CustomHeader  from '../../../Components/CustomHeader'
+
+const image = { uri: '../../../assets/bg.png' };
 
 export default class Feed extends React.Component {
   constructor(props) {
@@ -37,28 +39,9 @@ export default class Feed extends React.Component {
         
         <Container>
         <CustomHeader title="Bus Tracker" isHome={true} navigation={this.props.navigation}/>
-        <Content>
-          <Form>
-            <Item picker>
-              <Picker
-                mode="dropdown"
-                iosIcon={<Icon name="arrow-down" />}
-                style={{ width: undefined }}
-                placeholder="Select your SIM"
-                placeholderStyle={{ color: "#bfc6ea" }}
-                placeholderIconColor="#007aff"
-                selectedValue={this.state.selected2}
-                onValueChange={this.onValueChange2.bind(this)}
-              >
-                <Picker.Item label="(ALL) Select the root" value="key0" />
-                <Picker.Item label="Ja-Ela" value="key1" />
-                <Picker.Item label="Kolpity" value="key2" />
-                <Picker.Item label="Negombo" value="key3" />
-                <Picker.Item label="Panadura" value="key4" />
-              </Picker>
-            </Item>
-          </Form>
-        </Content>
+        <ImageBackground source={require('../../../assets/bg.png')} style={{flex:1}}>
+         
+        </ImageBackground>
       </Container>
       </View>
     )

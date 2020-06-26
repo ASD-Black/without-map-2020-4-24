@@ -126,11 +126,6 @@ export default class CardPayment extends React.Component {
                 regno: value,
                 inq_date: fullDate,
                 amount: this.state.amount,
-                //nameOnCard: this.state.nameOnCard,
-                //cNumber: this.state.cNumber,
-                //cvc: this.state.cvc,
-                //expDate: this.state.expDate,
-                //cType: this.state.selected2,
                 pay_type: "Card"
               })
             })

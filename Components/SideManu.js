@@ -56,7 +56,7 @@ export class SideManu extends React.Component {
                 <Text>Profile</Text>
               </ListItem>
               <ListItem onPress={()=> this.props.navigation.navigate('Setting')}>
-                <Text>Setting</Text>
+                <Text>Notifications</Text>
               </ListItem>
               <ListItem onPress={()=> this.props.navigation.navigate('Payments')}>
                 <Text>Payments</Text>
